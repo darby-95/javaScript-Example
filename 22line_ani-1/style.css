@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+* {margin: 0px;padding: 0px;box-sizing: border-box;}
+html {overflow-x: hidden;}
+ul,ol {list-style: none;padding: 0px;margin: 0px;}
+
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+a {transition: all 0.5s; text-decoration: none;}
+.line {position: relative;}
+h1 {font-size: 80px; line-height: 120px;}
+h2 {
+    font-size: 22px; 
+    line-height: 30px; 
+    text-transform: capitalize;  /* capitalize : 첫글자만 대문자 */
+    font-family: "Roboto", sans-serif;
+}
+
+.video-container {position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: -2;}
+.video-container::after {
+    content: ""; 
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+}
+.video-container video {width: 100%; object-fit: cover;}
+/* object-fit: cover : 비디오가 가지고 있는 모든 공간을 어떻게든 다 싸버리겠다. (= background cover) */
+
+.img-fluid {width: 100%;}
+.anime-list {padding: 60px 30px 0;}
+.anime-list .title {
+    text-transform: uppercase;
+    margin: 0px auto 60px;
+    width: fit-content; /* 내 부모를 가득 채워라 (= width 100% */
+    max-width: 1170px; /* 최대 넓이가 1170px을 넘지 않을만큼 */
+    text-align: center;
+}
+.anime-list ul li {
+    cursor: pointer;
+    position: relative;
+    display: flex; align-items: center; flex-wrap: wrap;
+    padding: 26px 0px; margin: 0px -12px;
+    opacity: 0.4;
+}
+.anime-list ul li>div {padding: 0 12px;}
+
+/* hover 했을때 흰 선에 주는 효과 */
+.anime-list ul li::before,
+.anime-list ul li::after {
+  content: "";
+  transition: all 1s;
+  position: absolute; bottom: 0px; left: 0px;
+  width: 100%; height: 1px;
+  background: rgba(255, 255, 255, 0.5); opacity: 0.5;
+}
+.anime-list ul li::after {
+    opacity: 1;
+    width: 0%;
+}
+.anime-list ul li:hover::after {
+    width: 100%;
+}
+.anime-list ul li:hover:not(.hover-img) {opacity: 1;} /* 클래스명이 .hover-img가 아닌 div */
+
+/* hover 했을때 가로선에 주는 효과 END */
+
+.anime-list .hover-img {
+    pointer-events: none;
+    position: absolute; z-index: -1; top: 50%; left: 0%;
+    width: 34vw; height: 34vw;
+}
+.anime-list .hover-img img {
+    transition: all 0.7s;
+    /* -webkit-transition: all 0.7s; */
+    opacity: 0;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 16px;
+}
+.anime-list li:hover .hover-img img {opacity: 1;}
+/* 마우스를 올리면 투명했던 이미지가 나타난다. */
+
+/* 12=100% */
+.anime-list .index {width: calc(100% / 12);} /* 1/12 크기만큼 가진다. */
+.anime-list .release-year {width: calc((100% / 12) * 2);}
+.anime-list .anime-name { width: calc((100% / 12) * 4);}
+.anime-list .genere {width: calc((100% / 12) * 4);}
+.anime-list .redirect-link {width: calc((100% / 12) * 1);}
+.anime-list .redirect-link a {
+    width: 30px;height: 30px;
+    margin: 0px auto;
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 50%; background: var(--white-color);
+}
+.anime-list .redirect-link svg {color: var(--black-color);}
+
+.ball {
+    width: 70px;height: 70px;
+    position: fixed; top: 0;left: 0;
+    border-radius: 50%; pointer-events: none;
+    backdrop-filter: invert(1) grayscale(1); /* 뒷 배경 반전 효과 */
+    z-index: 99999;
+  }

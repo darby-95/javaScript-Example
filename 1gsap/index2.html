@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="넷">넷</div>
+    </div>
+
+    <!-- gsap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    
+    <!-- gsap -->
+    <script>
+        // gsap은 duration의 기본값이 0.5초가 있다.
+        // 실행횟수 repeat:2 (기본적으로 1번 재생, 횟수+1 = 총 3번 재생이 된다.) 
+        // 무한반복 repeat:-1
+        // yoyo:true(false) 요요처럼 실행 - 역실행 - 실행이 반복된다.   
+        gsap.to('.넷',{x:400,duration:1,repeat:-1,yoyo:true})
+
+        
+
+    </script>
+</body>
+
+</html>

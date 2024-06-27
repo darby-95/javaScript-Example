@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 쿠키 생성시 필수 항목 ❗❗ 👀 쿠키 이름과 소멸 시기
+        // 쿠키 이름 -- cookieName
+        // 쿠키 소멸시기 -- expires
+        // 쿠키를 만들때 시간 - UTF 협정세계시를 사용
+
+        // 🌟 오늘의 날짜
+        let date=new Date();
+        // console.log(date.toUTCString()) // : 협정 세계시, (GMT) 🌟
+
+        // console.log(date.getDate()) // : 오늘의 날짜 (우리나라 기준) 🌟
+        // console.log(date.getDate() + 7) // : 오늘(우리나라 기준)의 날짜로부터 7일 뒤 🌟
+
+        // 🌟 날짜 세팅하는 방법 // 변수.setDate(새로운 날짜)
+        date.setDate(date.getDate() + 7)
+        console.log(date) // : date에 7일뒤의 날짜를 세팅하여 변경
+
+        // 🌟 쿠키 생성하기
+        let setCookie="";
+        setCookie += "CookieName=green; " // : 세미콜론(;)은 분류를 나눈다는 뜻
+        // ❗❗❗ : 세미콜론(;)을 찍고 반드시 마지막에 띄어쓰기를 해야한다.
+        setCookie += "expires=" + date.toUTCString() // : 만료날짜에는 띄어쓰기 필요 없다.
+        // console.log(setCookie)
+
+        // 🌟 쿠키 저장하기
+        document.cookie = setCookie
+
+    </script>
+</body>
+</html>

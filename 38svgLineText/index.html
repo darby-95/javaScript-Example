@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodePen - SVG text on path JS animation</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <div class="svg">
+        <svg viewBox="0 0 1800 600" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <path id="Vector_1" d="M0 33.5992C6.18345 33.5992 51.5287 11.9656 125.73 11.9656C185.091 11.9656 192.374 23.6409 188.595 29.4785C189.282 32.569 175.404 38.75 114.394 38.75C38.1313 38.75 9.27517 45.9612 15.4586 19.1768C21.6421 -7.60755 38.1313 -1.42655 35.0395 16.0863C31.9478 33.5992 -11.3363 99.5299 73.1708 152.068C157.678 204.607 181.494 263.327 188.595 284.96C210.237 350.891 5.15287 338.529 5.15287 314.835C5.15287 291.141 85.5377 304.533 129.852 319.986C174.167 335.438 198.901 337.499 199.931 314.835C200.962 292.171 190.656 280.839 149.433 300.413C108.21 319.986 0 336.468 11.3363 292.171C22.6726 247.874 28.8561 217.999 94.8129 178.853C160.77 139.706 195.809 119.103 195.809 63.474C195.809 7.84498 183.442 105.711 163.861 105.711C144.28 105.711 127.791 71.7154 108.21 76.8662C88.6294 82.017 50.4982 89.2282 50.4982 107.771C50.4982 116.874 62.5215 125.284 68.0179 128.375C82.7895 136.959 111.92 161.34 110.271 190.185C108.21 226.241 70.0791 243.753 55.651 254.055C44.6208 261.931 13.3975 292.171 42.2536 307.624C71.1096 323.076 151.494 334.408 170.045 300.413C188.595 266.417 109.241 264.821 109.241 231.391" stroke="black"/>
+                <!-- <path id="Vector_2" d="M716.5 414C752 437.333 862.8 478 1022 454C1131.5 437.492 1186.5 318 1304 318C1410.12 318 1433 441 1612.5 454C1792 467 1871 374.5 1914.5 359.5" stroke="black"/> -->
+            </defs>
+            <text>
+                <textPath class="text-on-path" href="#Vector_1" id="textOnPath1">My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio My Portfolio </textPath>
+                <!-- <textPath class="text-on-path" href="#Vector_2" id="textOnPath2">Hello World Hello World Hello World Hello World</textPath> -->
+            </text>
+          </svg>
+    </div>
+
+    <!-- partial -->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

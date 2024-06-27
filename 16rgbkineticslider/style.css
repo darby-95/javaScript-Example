@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+* {margin: 0;padding: 0; background-color: #000;}
+
+
+section {
+    height: 100vh;
+    position: relative;
+
+}
+
+
+.left-img-box {
+    position: absolute;
+    top: 0; left: 0;
+    width: 700px;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+section .left-img-box .rgbKineticSlider canvas {position: absolute;}
+
+
+section nav .main-nav {position: absolute;top: 50%;color: #fff;}
+section nav .prev {left: 0;}
+section nav .next {right: 0;}

@@ -1,0 +1,50 @@
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+
+section{height: 100vh; background-color: #000;
+color: #fff; 
+display: flex; justify-content: center;
+align-items: center;
+}
+.sec01 .title{font-size: 120px; text-transform: uppercase;
+line-height: 1.1;
+}
+
+.sec01 .title span{display: block;}
+
+.sec02 ul{display: flex; width: 70%; 
+    justify-content: space-between;}
+.sec02 ul li{
+    width: 22%; background-color: #fed700;
+height: 300px; border-radius: 20px;
+display: flex; justify-content: center; 
+align-items: center;
+}
+
+
+.sec03{position: relative;}
+.sec03 .contitle{color: #fff; font-size: 100px;}
+.sec03 span{display: block; 
+    width: 250px; height: 350px;
+background-color: #fee8b0;
+position: absolute; left: 50%; top: 50%; 
+transform: translate(-50%,-50%);
+border-radius: 20px; font-size: 28px; 
+font-weight: bold;
+color: #333; font-family: 30px; 
+/* //가운데정렬
+display: flex ; 
+justify-content: center;
+align-items: center; */
+
+/* grid 가운데 정렬 */
+display: grid;
+place-items: center ;
+
+
+}
+.sec03 span.a{transform: translate(-50%,-50%) rotate(-12deg);}
+.sec03 span.b{background-color: #baf3d5;transform: translate(-50%,-50%) rotate(12deg);}
+.sec03 span.c{background-color: #ecb6ea;transform: translate(-50%,-50%) rotate(-15deg);}
+.sec03 span.d{background-color: #acaee7;transform: translate(-50%,-50%) rotate(18deg);}
+.sec03 span.e{background-color: #fec4b0;transform: translate(-50%,-50%) rotate(-3deg);}

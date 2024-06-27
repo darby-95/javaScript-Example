@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div id="page-wrap">
+
+        <div id="canvas"></div>
+
+        <div class="flex-wrapper multi-textures">
+            <span>Click me !</span>
+            <!-- notice here we are using the data-sampler attribute to name our displacement sampler uniform -->
+            <img src="./img/displacement/14.jpg" crossorigin="" data-sampler="displacement" />
+            <!-- 첫번째 이미지는 배경 이미지가 아닌 텍스쳐 이미지를 넣는다. -->
+            <img src="./img/main2.jpg" crossorigin="" />
+            <img src="./img/main3.jpg" crossorigin="" />
+            <img src="./img/main4.jpg" crossorigin="" />
+            <img src="./img/main5.jpg" crossorigin="" />
+        </div>
+    </div>
+
+    <!-- js -->
+    <script type="module" src="./curtain.js"></script>
+</body>
+</html>

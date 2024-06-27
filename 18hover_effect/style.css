@@ -1,0 +1,11 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+.hover_effect{
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.hover_effect .my-div{width: 1000px; height: 500px;}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="하나">하나</div>
+        <div class="둘">둘</div>
+        <div class="셋">셋</div>
+    </div>
+
+    <!-- gsap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    
+    <!-- gsap -->
+    <script>
+        // ~하게 된다.
+
+
+        // gsap.to ('무엇이', {어떻게})
+
+        gsap.to('.하나', { // ❗❗ X(500)만큼 이동하는데, 2배로 커지고 360도로 회전하며 1초동안 움직인다.
+            x: 500, // X축을 기준으로 500(양수라서 좌에서 우로)만큼 움직인다.
+            rotation: 360, // 회전, deg는 생략한다.
+            duration: 1, // dureation : ~동안, 즉 1초동안
+            scale: 2 //
+        })
+
+
+        // gsap.from('무엇이', {실행문}) // 시작은 실행문의 내용, 도착은 원위치에 있는다.
+
+        gsap.from('.둘', { // ❗❗ X(700) 지점에서 3배 커진 상태에서 3초동안 서서히 원위치, 원래의 크기로 돌아간다.
+            x: 700,
+            scale: 3,
+            duration: 3
+        })
+
+
+        // gsap.fromTo('무엇이', {시작 상태의 실행문},{종료 상태의 실행문})
+
+        gsap.fromTo('.셋', { // ❗❗ 앞 실행문으로 시작하여 뒤 실행문으로 끝난다.
+            x: 800,
+            y: 400,
+            opacity: 0,
+            scale: 1,
+            duration: 1
+        }, {
+            x: 200,
+            y: 0,
+            opacity: 1,
+            scale: 3,
+            duration: 3
+        })
+        
+    </script>
+</body>
+
+</html>

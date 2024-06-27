@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="wrap">
+        <div class="하나">하나</div>
+        <div class="둘">둘</div>
+        <div class="셋">셋</div>
+    </div>
+
+    <!-- gsap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    
+    <!-- gsap -->
+    <script>
+        // [1] 기본
+        // gsap.from('.하나',{x:500,opacity:0,duration:1})
+        // gsap.from('.둘',{x:500,opacity:0,duration:1, delay:1}) /* 총 2초가 걸린다. */
+        // gsap.from('.셋',{x:500,opacity:0,duration:1, delay:2}) /* 총 3초가 걸린다. */
+        
+        // [2]
+        // '+=1' : 1초 뒤에 실행
+        // '-=1' : 1초 앞에 실행
+        // '<'   : 바로 앞 (ex: 셋에게 주면 바로 앞 트윈(애니메이션)인 '둘'과 같은 시간에 재생)
+        // '>'   : 바로 뒤 
+
+        // gsap.from('.하나',{x:500,opacity:0,duration:1})
+        // gsap.from('.둘',{x:500,opacity:0,duration:1,},'+=1') /* 위와 같은 효과 */
+        // gsap.from('.셋',{x:500,opacity:0,duration:1,},'+=1') 
+
+        // [3] ❗❗ delay 값을 주게 되면 delay가 적용된다.
+        // gsap.from('.하나',{x:500,opacity:0,duration:1})
+        // gsap.from('.둘',{x:500,opacity:0,duration:1,},'<') /* <, 바로 앞인 하나와 함께 재생 */
+        // gsap.from('.셋',{x:500,opacity:0,duration:1,},'<') /* <, 바로 앞인 둘과 함께 재생 */
+
+        // [4]
+        let tl = gsap.timeline();
+        tl.to(".하나", {x: 500, duration: 1});
+        tl.to(".둘", {x: 500, duration: 1},'-=0.5'); /* 원래 움직이는 시간보다 0.5s 빠르다. */
+        tl.to(".셋", {x: 500, duration: 1.5},'<'); /* < 를 주면서 둘과 함께 시작하지만 1.5초 걸린다. */
+
+    </script>
+</body>
+
+</html>

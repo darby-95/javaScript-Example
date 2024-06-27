@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .stage {
+            width: 500px;
+            height: 500px;
+            background-color: darksalmon;
+            opacity: 0;
+            visibility: hidden;
+            /* 둘은 같은 효과(보이지 않는)를 가지고 있다. */
+        }
+
+        .stage .item {
+            width: 80px;
+            height: 90px;
+            background: url(https://i.namu.wiki/i/qWyoh8nA_DcTuY4gqcmkFC2k5Sbn8D6yVCVRQHMhJD-eRYtugUDNg6jP-v0VqbnFdCjL4jYrepNXw9ey8ouFAA.webp) no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <!-- gsap cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <!-- script -->
+    <script>
+        let tl = gsap.timeline();
+        // autoAlpha 란? opacity, visibility 모두를 보이게 하기도 하고 안보이게 하기도 한다.
+
+        tl
+            .to(".stage", 1.5, {
+                autoAlpha: 1
+            })
+            .to(".item", {
+                // keyframes: {
+                //     "0%": {x:0, y:0,},
+                //     "25%": {x:20, y:0, ease: "sine.out",},
+                //     "50%": {x:250, y:-100,ease: "sine.in",},
+                //     "75%": {x:400, y:0,ease: "sine.out",},
+                //     "100%": {x:500, y:0,},
+                // },
+                keyframes:{
+                    x:[0,20,250,400,500,1000],
+                    y:[0,0,-100,0,0,0],
+                    ease: "sine.out",
+                },
+
+                duration:2,
+                stagger:0.5
+            })
+        // 각각 'tl.to' 를 적으나 처음에만 tl을 적고 나중에는 생략해도 똑같이 적용된다.
+    </script>
+
+</body>
+
+</html>

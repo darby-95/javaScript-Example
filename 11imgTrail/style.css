@@ -1,0 +1,15 @@
+@charset "UTF-8";
+@font-face{
+    font-family: PPMori-SemiBold; /* 임의로 지정 */
+    src: url("./PPMori-SemiBold.woff")} /* 폰트 경로 */
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+.main {position: relative; width: 100vw; height: 100vh; display: grid; place-items: center; background-color: orange;}
+.main .items {position: absolute; left: 0; top: 0; width: 100vw; height: 100vh;}
+.main h1 {
+    font-family: PPMori-SemiBold; font-size: 40px; text-transform: uppercase;
+    text-align: center;
+}
+.main .items .item {position: absolute; top: 0; left: 0; width: 150px; height: 200px; overflow: hidden;}
+.main .items img{width: 100%;}

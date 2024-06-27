@@ -1,0 +1,17 @@
+* {margin: 0; padding: 0;}
+
+.wrap>div {
+    margin: 50px 0;
+    width: 100px; height: 100px; 
+    text-align: center;
+    line-height: 100px;
+}
+
+
+/* index */
+.하나 {background-color: lightcoral;}
+.둘 {background-color: lightgoldenrodyellow;}
+.셋 {background-color: lightsalmon;}
+
+/* index2 */
+.넷 {background-color: lightskyblue;}
